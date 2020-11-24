@@ -1,0 +1,14 @@
+# Mac OSX generated files
+.DS_Store
+
+# Eclipse generated files
+.classpath
+.project
+.settings
+
+# RubyMine
+.idea
+
+# Vim generated files
+*~
+*.swp
