@@ -12,3 +12,6 @@
 # Vim generated files
 *~
 *.swp
+
+# Configuration
+config
