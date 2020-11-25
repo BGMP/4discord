@@ -38,7 +38,7 @@ module Bot
     if board.nil? then return "Invalid board!" end
 
     page = rand(0.. 9)
-    thread_number = rand(0.. 9)
+    thread_number = page == 0 ? rand(0.. 9) + 1 : rand(0.. 9)
 
     post = ChanAPI.get_post(board, page, thread_number)
     file_url = API_MEDIA.gsub("{0}", board.to_s)
