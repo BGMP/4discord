@@ -1,7 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    config_yml (0.0.7)
     discordrb (3.3.0)
       discordrb-webhooks (~> 3.3.0)
       ffi (>= 1.9.24)
@@ -22,10 +21,7 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2020.1104)
-    mini_portile2 (2.4.0)
     netrc (0.11.0)
-    nokogiri (1.10.10-x64-mingw32)
-      mini_portile2 (~> 2.4.0)
     open-uri (0.1.0)
     opus-ruby (1.0.1)
       ffi
@@ -49,10 +45,8 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  config_yml
   discordrb (~> 3.3)
   json (~> 2.3, >= 2.3.1)
-  nokogiri (~> 1.10, >= 1.10.10)
   open-uri (~> 0.1.0)
 
 RUBY VERSION

@@ -1,3 +1,6 @@
+# A module which catalogs and maps all 4chan's boards's names and features
+#
+
 BOARDS = {
     :a      =>    "animemanga",
     :c      =>    "animecute",
@@ -74,20 +77,22 @@ BOARDS = {
     :r      =>    "adultrequests",
 }.freeze
 
-class << self
+module ChanBoards
+  class << self
 
-  # Converts the passed board name into its board slug equivalent. (i.e: Random => b)
-  # If the passed name happens to already be the slug, such as "b", it will just return itself.
-  #
-  # @param name The name of the board
-  # @return The slug corresponding to the passed board name
-  def to_board_slug(name)
-    key = name.downcase
-    if BOARDS.has_key?(key.to_sym) or BOARDS.has_key?(key.to_s)
-      name
-    else
-      slug = BOARDS.key(key)
-      slug.nil? ? nil : slug.to_s
+    # Converts the passed board name into its board slug equivalent. (i.e: Random => b)
+    # If the passed name happens to already be the slug, such as "b", it will just return itself.
+    #
+    # @param name The name of the board
+    # @return The slug corresponding to the passed board name
+    def name_to_board_slug(name)
+      key = name.downcase
+      if BOARDS.has_key?(key.to_sym) or BOARDS.has_key?(key.to_s)
+        name
+      else
+        slug = BOARDS.key(key)
+        slug.nil? ? nil : slug.to_s
+      end
     end
   end
 end

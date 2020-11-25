@@ -1,3 +1,5 @@
+# A module to easily interact with 4chan's API
+#
 
 API = "https://a.4cdn.org/{0}/catalog.json".freeze
 API_MEDIA = "https://i.4cdn.org/{0}/{1}{2}".freeze
