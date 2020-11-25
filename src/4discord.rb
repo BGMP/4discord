@@ -5,7 +5,7 @@ require 'yaml'
 require_relative '4chan_api'
 require_relative '4chan_boards'
 
-# A module which represents default values to the bot's behaviour
+# A module which represents default values to the @bot's behaviour
 #
 module BotDefaults
   CONFIG = YAML.load_file("config/config.yml")
@@ -20,22 +20,23 @@ module Bot
   include ChanAPI
   include ChanBoards
 
-  bot = Discordrb::Commands::CommandBot.new :token => CONFIG[:token],
+  @bot = Discordrb::Commands::CommandBot.new :token => CONFIG[:token],
                                             :client_id => CONFIG[:client_id],
                                             :prefix => CONFIG[:prefix]
 
-  bot.command :chan do |event|
-    input = event.message.to_s.split(" ")
-    if input.length > 2
-      "Too many arguments!"
-    end
+  @bot.command(:chan,
+               :descritpion         => "Main command for getting random 4chan posts",
+               :usage               => "/chan <board>",
+               :min_args            => 0,
+               :max_args            => 1,
+               :permission_message  => "You do not have permission to use /chan",
+               :chain_usable        => false,
+               :rescue              => "An internal exception has occurred."
+  ) do |event, board|
 
-    input_board = input[1]
-    if !input_board.nil? and ChanBoards.name_to_board_slug(input_board).nil?
-      "Invalid board!"
-    end
+    board = board.nil? ? DEFAULT_BOARD : ChanBoards.name_to_board_slug(board)
+    if board.nil? then return "Invalid board!" end
 
-    board = input_board.nil? ? DEFAULT_BOARD : ChanBoards.name_to_board_slug(input_board)
     page = rand(0.. 9)
     thread_number = rand(0.. 9)
 
@@ -44,7 +45,7 @@ module Bot
                    .gsub("{1}", post["tim"].to_s)
                    .gsub("{2}", post["ext"].to_s)
 
-    bot.channel(event.channel.id).send_embed do |embed|
+    @bot.channel(event.channel.id).send_embed do |embed|
       embed.title = "#{post["name"]} No. #{post["no"]}"
       embed.colour = EMBED_COLOR
       embed.description = post["com"]
@@ -66,8 +67,8 @@ module Bot
   end
 
   at_exit do
-    bot.stop
+    @bot.stop
   end
 
-  bot.run
+  @bot.run
 end
