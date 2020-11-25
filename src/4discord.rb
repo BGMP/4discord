@@ -1,5 +1,5 @@
-require 'configuration'
 require 'discordrb'
+require 'nokogiri'
 require 'yaml'
 
 require_relative '4chan_api'
@@ -48,7 +48,7 @@ module Bot
     @bot.channel(event.channel.id).send_embed do |embed|
       embed.title = "#{post["name"]} No. #{post["no"]}"
       embed.colour = EMBED_COLOR
-      embed.description = post["com"]
+      embed.description = Nokogiri::HTML(post["com"]).text
       embed.add_field(:name => "Link",
                       :value => API_THREAD.gsub("{0}", board.to_s)
                                     .gsub("{1}", post["no"].to_s)

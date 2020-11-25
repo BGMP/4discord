@@ -7,4 +7,5 @@ ruby '2.6.6'
 
 gem 'discordrb', '~> 3.3'
 gem 'json', '~> 2.3', '>= 2.3.1'
+gem 'nokogiri', '~> 1.10', '>= 1.10.10'
 gem 'open-uri', '~> 0.1.0'
