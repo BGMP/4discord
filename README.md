@@ -1,6 +1,6 @@
 4discord
 ---
 
-Discord bot to fetch posts from 4chan.org.
+Discord bot which can fetch random posts from any 4chan.org board 
 
 Inspired by [4chan-Discord-Bot](https://github.com/Romejanic/4chan-Discord-Bot)
