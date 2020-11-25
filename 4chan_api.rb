@@ -40,14 +40,14 @@ module ChanAPI
 
     # Gets all 10 threads within the specified page
     def get_page_posts(board, page)
-      api_get(API.gsub("{0}", board)) do |io|
+      api_get(API.gsub("{0}", board.to_s)) do |io|
         JSON.parse(io.read)[page]["threads"]
       end
     end
 
     # Gets the specified thread (0-9), from the specified page
     def get_post(board, page, thread_number)
-      api_get(API.gsub("{0}", board)) do |io|
+      api_get(API.gsub("{0}", board.to_s)) do |io|
         JSON.parse(io.read)[page]["threads"][thread_number]
       end
     end
