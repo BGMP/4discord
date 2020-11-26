@@ -14,9 +14,9 @@ module Bot
   include ChanAPI
   include ChanBoards
 
-  @bot = Discordrb::Commands::CommandBot.new :token => CONFIG[:token],
-                                            :client_id => CONFIG[:client_id],
-                                            :prefix => CONFIG[:prefix]
+  @bot = Discordrb::Commands::CommandBot.new :token     => CONFIG[:token],
+                                             :client_id => CONFIG[:client_id],
+                                             :prefix    => CONFIG[:prefix]
 
   CommandRegistry.new.register_commands(@bot)
 

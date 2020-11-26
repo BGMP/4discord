@@ -16,7 +16,7 @@ class ChanCommand
                 :rescue              => "An internal exception has occurred."
     ) do |event, board|
 
-      board = board.nil? ? DEFAULT_BOARD : ChanBoards.name_to_board_slug(board)
+      board = board.nil? ? DEFAULT_BOARD : ChanBoards.name_to_board_slug(board.downcase)
       if board.nil? then return "Invalid board!" end
 
       page = rand(0.. 9)

@@ -1,4 +1,4 @@
-# A module which catalogs and maps all 4chan's boards's names and features
+# A module which catalogs and maps all 73 4chan boards's names and features
 #
 
 BOARDS = {
@@ -78,6 +78,7 @@ BOARDS = {
 }.freeze
 
 module ChanBoards
+
   class << self
 
     # Converts the passed board name into its board slug equivalent. (i.e: Random => b)
