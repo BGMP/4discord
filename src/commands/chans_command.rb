@@ -31,8 +31,7 @@ class ChansCommand
       end
 
       page = page.to_i
-
-      if page < 0 or page > 6
+      if page < 1 or page > 6
         return "Pages go from 1 to 6!"
       end
 
