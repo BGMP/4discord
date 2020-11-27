@@ -1,8 +1,11 @@
 # Node bot command
 
 class ChanCommand
-  DEFAULT_BOARD = "b"
-  EMBED_COLOR = "#9b1f1f"
+  DEFAULT_BOARD      = "b"
+  POST_EMBED_COLOUR  = "#9b1f1f"
+  REPLY_EMBED_COLOUR = "#dd2929"
+
+  @latest = nil                        # Latest post randomly pulled by /chan
 
   def register(bot)
 
@@ -16,13 +19,49 @@ class ChanCommand
                 :rescue              => "An internal exception has occurred."
     ) do |event, board|
 
-      board = board.nil? ? DEFAULT_BOARD : ChanBoards.name_to_board_slug(board.downcase)
+      if board.nil?
+        board = DEFAULT_BOARD
+      elsif board.eql?("replies")
+        if @latest.nil?
+          return "You must pull a random post first! Use /chan"
+        else
+
+          replies = @latest["last_replies"]
+
+          if replies.empty?
+            bot.channel(event.channel.id).send_embed do |embed|
+              embed.description = "This post has no replies."
+            end
+          else
+            replies[0.. 5].each do |reply|
+              file_url = API_MEDIA
+                             .gsub("{0}", board.to_s)
+                             .gsub("{1}", reply["tim"].to_s)
+                             .gsub("{2}", reply["ext"].to_s)
+
+              bot.channel(event.channel.id).send_embed do |embed|
+                embed.title = "#{reply["name"]} No. #{reply["no"]}"
+                embed.colour = REPLY_EMBED_COLOUR
+                embed.description = Nokogiri::HTML(reply["com"]).text
+                embed.image = Discordrb::Webhooks::EmbedImage.new(
+                    :url => file_url
+                )
+              end
+            end
+          end
+
+          return
+        end
+      end
+
+      board = ChanBoards.name_to_board_slug(board.downcase)
       if board.nil? then return "Invalid board!" end
 
       page = rand(0.. 9)
       thread_number = page == 0 ? rand(0.. 9) + 1 : rand(0.. 9)
 
       post = ChanAPI.get_post(board, page, thread_number)
+      @latest = post
       file_url = API_MEDIA
                      .gsub("{0}", board.to_s)
                      .gsub("{1}", post["tim"].to_s)
@@ -30,7 +69,7 @@ class ChanCommand
 
       bot.channel(event.channel.id).send_embed do |embed|
         embed.title = "#{post["name"]} No. #{post["no"]}"
-        embed.colour = EMBED_COLOR
+        embed.colour = POST_EMBED_COLOUR
         embed.description = Nokogiri::HTML(post["com"]).text
         embed.add_field(:name => "Link",
                         :value => API_THREAD
