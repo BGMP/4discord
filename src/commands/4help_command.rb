@@ -22,7 +22,7 @@ class HelpCommand
                         :value => "Pulls a random post from a 4chan board",
                         :inline => true
         )
-        embed.add_field(:name => "/chan <replies>",
+        embed.add_field(:name => "/chan replies",
                         :value => "Pulls 5 replies from the latest randomly pulled post",
                         :inline => true
         )
