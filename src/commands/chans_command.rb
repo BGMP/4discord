@@ -19,6 +19,7 @@ class ChansCommand
     bot.command(:chans,
                 :descritpion         => "Displays some of the most popular 4chan boards",
                 :usage               => "/chans",
+                :channels            => ["4chan"],
                 :min_args            => 0,
                 :max_args            => 1,
                 :permission_message  => "You do not have permission to use /chan",

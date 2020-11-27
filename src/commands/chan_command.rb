@@ -12,6 +12,7 @@ class ChanCommand
     bot.command(:chan,
                 :descritpion         => "Main command for getting random 4chan posts",
                 :usage               => "/chan <board>",
+                :channels            => ["4chan"],
                 :min_args            => 0,
                 :max_args            => 1,
                 :permission_message  => "You do not have permission to use /chan",
