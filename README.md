@@ -1,7 +1,7 @@
 4discord
 ---
 
-Discord bot which can fetch random posts from any 4chan.org board
+Discord bot which fetches random posts from any [4chan.org](https://4chan.org/) board!
 
 ### Commands
 
