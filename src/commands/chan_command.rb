@@ -87,8 +87,6 @@ class ChanCommand
         )
       end
 
-      puts @latest_pulls
-
       if post["ext"].eql? ".webm"
         "#{file_url}"
       end
