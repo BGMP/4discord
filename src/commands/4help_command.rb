@@ -24,7 +24,7 @@ class HelpCommand
                         :inline => true
         )
         embed.add_field(:name => "/chan replies",
-                        :value => "Pulls 5 replies from the latest randomly pulled post",
+                        :value => "Pulls the 5 last replies from the latest randomly pulled post",
                         :inline => true
         )
         embed.add_field(:name => "/chans <page>",
