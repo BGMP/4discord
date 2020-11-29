@@ -8,10 +8,11 @@ class ChanCommand
   def register(bot)
 
     @latest_pulls = Hash.new         # Latest posts randomly pulled by /chan. { :channel_id => post } map
+    @latest_board = Hash.new         # Latest board /chan pulled a post from. { :channel_id => post } map
 
     bot.command(:chan,
-                :descritpion         => "Main command for getting random 4chan posts",
-                :usage               => "/chan <board>",
+                :descritpion         => "Main command for fetching random 4chan posts and replies",
+                :usage               => "/chan <board | replies>",
                 :channels            => ["4chan"],
                 :min_args            => 0,
                 :max_args            => 1,
@@ -32,14 +33,14 @@ class ChanCommand
 
           replies = latest["last_replies"]
 
-          if replies.empty?
+          if replies.nil? or replies.empty?
             bot.channel(channel_id).send_embed do |embed|
               embed.description = "This post has no replies."
             end
           else
             replies[0.. 5].each do |reply|
               file_url = API_MEDIA
-                             .gsub("{0}", board.to_s)
+                             .gsub("{0}", @latest_board[channel_id])
                              .gsub("{1}", reply["tim"].to_s)
                              .gsub("{2}", reply["ext"].to_s)
 
@@ -65,7 +66,10 @@ class ChanCommand
       thread_number = page == 0 ? rand(0.. 9) + 1 : rand(0.. 9)
 
       post = ChanAPI.get_post(board, page, thread_number)
+
       @latest_pulls[channel_id] = post
+      @latest_board[channel_id] = board
+
       file_url = API_MEDIA
                      .gsub("{0}", board.to_s)
                      .gsub("{1}", post["tim"].to_s)
@@ -88,7 +92,7 @@ class ChanCommand
         )
       end
 
-      if post["ext"].eql? ".webm"
+      if !post["ext"].nil? and post["ext"].eql? ".webm"
         "#{file_url}"
       end
     end
