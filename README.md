@@ -14,7 +14,7 @@ and it is unmodifiable! Everyone with access to send messages through this chann
 
 Every command for the 4discord bot
 	
-  * `/4help`: Display genereal help for the bot.
+  * `/4help`: Display general help for the bot.
   * `/chans <page>`: Display available 4chan boards.
   * `/chan <board>`: Pull a random post from a 4chan board. Not providing a board will randomly pull from /b/!
   * `/chan replies`: Display 5 of the latest replies to the latest post pulled by /chan
