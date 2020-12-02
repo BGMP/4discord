@@ -8,12 +8,12 @@ class ChanCommand
   def register(bot)
 
     @latest_pulls = Hash.new         # Latest posts randomly pulled by /chan. { :channel_id => post } map
-    @latest_board = Hash.new         # Latest board /chan pulled a post from. { :channel_id => post } map
+    @latest_board = Hash.new         # Latest board /chan pulled a post from. { :channel_id => board } map
 
     bot.command(:chan,
                 :descritpion         => "Main command for fetching random 4chan posts and replies",
                 :usage               => "/chan <board | replies>",
-                :channels            => ["4chan"],
+                :channels            => ["4chan", "4chan-dev"],
                 :min_args            => 0,
                 :max_args            => 1,
                 :permission_message  => "You do not have permission to use /chan",
@@ -39,10 +39,7 @@ class ChanCommand
             end
           else
             replies[0.. 5].each do |reply|
-              file_url = API_MEDIA
-                             .gsub("{0}", @latest_board[channel_id])
-                             .gsub("{1}", reply["tim"].to_s)
-                             .gsub("{2}", reply["ext"].to_s)
+              file_url = ChanAPI.get_media_url(@latest_board[channel_id], reply["tim"], reply["ext"])
 
               bot.channel(channel_id).send_embed do |embed|
                 embed.title = "#{reply["name"]} No. #{reply["no"]}"
@@ -51,6 +48,10 @@ class ChanCommand
                 embed.image = Discordrb::Webhooks::EmbedImage.new(
                     :url => file_url
                 )
+              end
+
+              if !reply["ext"].nil? and reply["ext"].eql? ".webm"
+                return "#{file_url}"
               end
             end
           end
@@ -70,19 +71,14 @@ class ChanCommand
       @latest_pulls[channel_id] = post
       @latest_board[channel_id] = board
 
-      file_url = API_MEDIA
-                     .gsub("{0}", board.to_s)
-                     .gsub("{1}", post["tim"].to_s)
-                     .gsub("{2}", post["ext"].to_s)
+      file_url = ChanAPI.get_media_url(board.to_s, post["tim"], post["ext"])
 
       bot.channel(channel_id).send_embed do |embed|
         embed.title = "#{post["name"]} No. #{post["no"]}"
         embed.colour = POST_EMBED_COLOUR
         embed.description = Nokogiri::HTML(post["com"]).text
         embed.add_field(:name => "Link",
-                        :value => API_THREAD
-                                      .gsub("{0}", board.to_s)
-                                      .gsub("{1}", post["no"].to_s)
+                        :value => ChanAPI.get_thread_url(board, post["no"])
         )
         embed.image = Discordrb::Webhooks::EmbedImage.new(
             :url => file_url

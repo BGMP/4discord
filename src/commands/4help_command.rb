@@ -10,7 +10,7 @@ class HelpCommand
     bot.command(LABEL.to_sym,
                 :descritpion         => "Displays general help for the bot",
                 :usage               => "/4help",
-                :channels            => ["4chan"],
+                :channels            => ["4chan", "4chan-dev"],
                 :min_args            => 0,
                 :max_args            => 0,
                 :chain_usable        => false,

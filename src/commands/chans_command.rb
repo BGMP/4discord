@@ -4,7 +4,7 @@
 class ChansCommand
   require_relative '../4chan_boards'
 
-  EMBED_COLOR = "#9b1f1f"
+  EMBED_COLOUR = "#9b1f1f"
   BOARD_RANGES = {
       1 => 0.. 11,
       2 => 12.. 23,
@@ -19,7 +19,7 @@ class ChansCommand
     bot.command(:chans,
                 :descritpion         => "Displays some of the most popular 4chan boards",
                 :usage               => "/chans",
-                :channels            => ["4chan"],
+                :channels            => ["4chan", "4chan-dev"],
                 :min_args            => 0,
                 :max_args            => 1,
                 :permission_message  => "You do not have permission to use /chan",
@@ -38,7 +38,7 @@ class ChansCommand
 
       bot.channel(event.channel.id).send_embed do |embed|
         embed.title = "4chan boards"
-        embed.colour = EMBED_COLOR
+        embed.colour = EMBED_COLOUR
 
         BOARDS.values[BOARD_RANGES[page]].each do |value|
           embed.add_field(:name => value.to_s,
