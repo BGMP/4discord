@@ -6,7 +6,7 @@ require_relative '4chan_api'
 require_relative '4chan_boards'
 require_relative 'commands/framework/command_registry'
 
-CONFIG = YAML.load_file("config/config.yml")
+CONFIG = YAML.load_file("../config/config.yml")
 
 # Main Bot module
 #

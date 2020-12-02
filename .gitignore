@@ -13,5 +13,5 @@
 *~
 *.swp
 
-# Configuration
-config.yml
+# Configuration secrets
+config/config.yml
