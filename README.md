@@ -5,7 +5,10 @@ Discord bot which fetches random posts from any [4chan.org](https://4chan.org/) 
 
 ### Set up
 
-Create a `#4chan` channel on your Discord server. This is the only channel where 4discord will respond to its commands, and it is unmodifiable! Everyone with access to send messages through this channel will be able to use the bot.
+Create a `#4chan` channel on your Discord server. This is the only channel where 4discord will respond to its commands,
+and it is unmodifiable! Everyone with access to send messages through this channel will be able to use the bot.
+
+**Make sure the bot has access to send messages through this channel**!
 
 ### Commands
 
