@@ -27,6 +27,11 @@ class ChansCommand
                 :rescue              => "An internal exception has occurred."
     ) do |event, page|
 
+      unless event.channel.nsfw
+        return "Channel `##{event.channel.name}` must be NSFW!\n" \
+        " » https://support.discord.com/hc/en-us/articles/115000084051-NSFW-channels-and-content"
+      end
+
       if page.nil?
         page = 1
       end

@@ -16,6 +16,12 @@ class HelpCommand
                 :chain_usable        => false,
                 :rescue              => "An internal exception has occurred."
     ) do |event|
+
+      unless event.channel.nsfw
+        return "Channel `##{event.channel.name}` must be NSFW!\n" \
+        " » https://support.discord.com/hc/en-us/articles/115000084051-NSFW-channels-and-content"
+      end
+
       bot.channel(event.channel.id).send_embed do |embed|
         embed.title = "4discord Help Menu"
         embed.colour = EMBED_COLOUR

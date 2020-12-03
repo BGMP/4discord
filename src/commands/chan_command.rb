@@ -21,6 +21,11 @@ class ChanCommand
                 :rescue              => "An internal exception has occurred."
     ) do |event, board|
 
+      unless event.channel.nsfw
+        return "Channel `##{event.channel.name}` must be NSFW!\n" \
+        " » https://support.discord.com/hc/en-us/articles/115000084051-NSFW-channels-and-content"
+      end
+
       channel_id = event.channel.id.to_s
       latest = @latest_pulls[channel_id]
 
