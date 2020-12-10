@@ -15,3 +15,6 @@
 
 # Configuration secrets
 config/config.yml
+
+# SQLite database file
+bot.db

@@ -1,12 +1,11 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    discordrb (3.3.0)
+    discordrb (3.4.0)
       discordrb-webhooks (~> 3.3.0)
       ffi (>= 1.9.24)
       opus-ruby
-      rbnacl (~> 3.4.0)
-      rest-client (>= 2.1.0.rc1)
+      rest-client (>= 2.0.0)
       websocket-client-simple (>= 0.3.0)
     discordrb-webhooks (3.3.0)
       rest-client (>= 2.1.0.rc1)
@@ -28,14 +27,13 @@ GEM
     open-uri (0.1.0)
     opus-ruby (1.0.1)
       ffi
-    rbnacl (3.4.0)
-      ffi
     rest-client (2.1.0-x64-mingw32)
       ffi (~> 1.9)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    sqlite3 (1.4.2)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7-x64-mingw32)
@@ -52,6 +50,7 @@ DEPENDENCIES
   json (~> 2.3, >= 2.3.1)
   nokogiri (~> 1.10, >= 1.10.10)
   open-uri (~> 0.1.0)
+  sqlite3 (~> 1.4, >= 1.4.2)
 
 RUBY VERSION
    ruby 2.6.6p146

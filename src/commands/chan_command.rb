@@ -5,7 +5,7 @@ class ChanCommand
   POST_EMBED_COLOUR  = "#9b1f1f"
   REPLY_EMBED_COLOUR = "#dd2929"
 
-  def register(bot)
+  def register(bot, db)
 
     @latest_pulls = Hash.new         # Latest posts randomly pulled by /chan. { :channel_id => post } map
     @latest_board = Hash.new         # Latest board /chan pulled a post from. { :channel_id => board } map
@@ -13,13 +13,22 @@ class ChanCommand
     bot.command(:chan,
                 :descritpion         => "Main command for fetching random 4chan posts and replies",
                 :usage               => "/chan <board | replies>",
-                :channels            => ["4chan", "4chan-dev"],
                 :min_args            => 0,
                 :max_args            => 1,
-                :permission_message  => "You do not have permission to use /chan",
-                :chain_usable        => false,
                 :rescue              => "An internal exception has occurred."
     ) do |event, board|
+
+      return if event.message.channel.type != 0
+
+      row = db.execute("SELECT * FROM channels WHERE server_id = ?", [event.server.id])
+      if row.empty?
+        return "<@#{bot.profile.id}> is not hooked to any channel on this discord server!\n" \
+        " » Use `/4channel <channel>` to hook it up!"
+      else
+        hooked_channel = row[0][1]
+
+        return unless event.channel.id.eql?(hooked_channel)
+      end
 
       unless event.channel.nsfw
         return "Channel `##{event.channel.name}` must be NSFW!\n" \

@@ -1,6 +1,7 @@
 require 'discordrb'
 require 'nokogiri'
 require 'yaml'
+require 'sqlite3'
 
 require_relative '4chan_api'
 require_relative '4chan_boards'
@@ -18,7 +19,16 @@ module Bot
                                              :client_id => CONFIG[:client_id],
                                              :prefix    => CONFIG[:prefix]
 
-  CommandRegistry.new.register_commands(@bot)
+  @db = SQLite3::Database.new "../config/bot.db"
+  @db.execute <<-SQL
+  create table if not exists channels (
+    server_id int,
+    channel_id int,
+    channel_name varchar(100)
+  );
+  SQL
+
+  CommandRegistry.new.register_commands(@bot, @db)
 
   at_exit do
     @bot.stop
