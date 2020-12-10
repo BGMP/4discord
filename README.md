@@ -5,14 +5,8 @@ Discord bot which fetches random posts from any [4chan.org](https://4chan.org/) 
 
 ### Set up
 
-Create a `#4chan` **NSFW** channel on your Discord server. This is the only channel where 4discord will respond to its commands,
+Create a `#4chan` channel on your Discord server. This is the only channel where 4discord will respond to its commands,
 and it is unmodifiable! Everyone with access to send messages through this channel will be able to use the bot.
-
-**Make sure the bot has access to send messages through the #4chan channel, and that this channel is also marked as NSFW!**
-**Otherwise, the bot will not respond to its commands at all!**
-
-* For more information on NSFW channels please refer to [this article](https://support.discord.com/hc/en-us/articles/115000084051-NSFW-channels-and-content)
-by Discord.
 
 ### Commands
 
