@@ -17,8 +17,7 @@ class ChannelCommand
     ) do |event, channel_name|
 
       current_server = event.server
-
-      server_channel_match = current_server.channels.find { |c| c.name.eql?(channel_name) }
+      server_channel_match = current_server.channels.find { |c| c.name.eql?(channel_name) or "<##{c.id}>".eql?(channel_name) }
       if server_channel_match.nil?
         return "Channel `##{channel_name}` not found! You must create it first!"
       end
@@ -30,7 +29,7 @@ class ChannelCommand
         db.execute("UPDATE channels SET channel_id = ?, channel_name = ? WHERE server_id = ?", [server_channel_match.id, channel_name, current_server.id])
       end
 
-      return ":link: <@#{bot.profile.id}> will now respond to commands on `##{channel_name}`"
+      return ":link: <@#{bot.profile.id}> will now respond to commands on `##{server_channel_match.name}`"
     end
   end
 end
