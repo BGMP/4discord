@@ -24,9 +24,9 @@ class ChannelCommand
 
       row = db.execute("SELECT * FROM channels WHERE server_id = ?", [current_server.id])
       if row.empty?
-        db.execute("INSERT INTO channels (server_id, channel_id, channel_name) VALUES (?, ?, ?)", [current_server.id, server_channel_match.id, channel_name])
+        db.execute("INSERT INTO channels (server_id, channel_id, channel_name) VALUES (?, ?, ?)", [current_server.id, server_channel_match.id, server_channel_match.name])
       else
-        db.execute("UPDATE channels SET channel_id = ?, channel_name = ? WHERE server_id = ?", [server_channel_match.id, channel_name, current_server.id])
+        db.execute("UPDATE channels SET channel_id = ?, channel_name = ? WHERE server_id = ?", [server_channel_match.id, server_channel_match.name, current_server.id])
       end
 
       return ":link: <@#{bot.profile.id}> will now respond to commands on `##{server_channel_match.name}`"
