@@ -1,9 +1,12 @@
+task :default => [:update, :mount]
+
 task :update do
   system("git reset --hard")
   system("git clean -fd")
   system("git pull")
+  system("bundle install")
 end
 
 task :mount do
-  system("screen -dmS 4discord && ruby src/4discord.rb")
+  system("screen -dmS 4discord bash -c 'ruby src/4discord.rb'")
 end
