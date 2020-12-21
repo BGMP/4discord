@@ -27,7 +27,6 @@ GEM
     open-uri (0.1.0)
     opus-ruby (1.0.1)
       ffi
-    rake (12.3.3)
     rest-client (2.1.0-x64-mingw32)
       ffi (~> 1.9)
       http-accept (>= 1.7.0, < 2.0)
@@ -51,7 +50,6 @@ DEPENDENCIES
   json (~> 2.3, >= 2.3.1)
   nokogiri (~> 1.10, >= 1.10.10)
   open-uri (~> 0.1.0)
-  rake (~> 12.3.3)
   sqlite3 (~> 1.4, >= 1.4.2)
 
 RUBY VERSION
