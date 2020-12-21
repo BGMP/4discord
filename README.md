@@ -26,7 +26,7 @@ Instructions on how to set the bot up internally, and on how to run it for devel
 
 #### Prerequisites
 * [Ruby 2.6.6](https://www.ruby-lang.org/)
-  * OS X: [RVM](http://rvm.io) is recommended over the default OS X Ruby. Here's a one-liner: `\curl -sSL https://get.rvm.io | bash -s stable --ruby
+  * OS X: [RVM](http://rvm.io) is recommended over the default OS X Ruby. Here's a one-liner: `\curl -sSL https://get.rvm.io | bash -s stable --ruby`
 
 From the project's root:
 * Ensure bundler is installed: `gem install bundle`
