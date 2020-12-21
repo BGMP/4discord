@@ -2,7 +2,7 @@
 #
 
 class ChansCommand
-  require_relative './../4chan_boards'
+  require_relative '../4chan_boards'
 
   EMBED_COLOUR = "#9b1f1f"
   BOARD_RANGES = {
