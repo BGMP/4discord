@@ -1,10 +1,8 @@
 # A command to display some of the most popular 4chan boards
 #
 
-COMMANDS = File.dirname(__FILE__)
-
 class ChansCommand
-  require_relative "#{COMMANDS}/../4chan_boards"
+  require_relative './../4chan_boards'
 
   EMBED_COLOUR = "#9b1f1f"
   BOARD_RANGES = {

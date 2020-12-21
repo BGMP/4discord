@@ -3,13 +3,11 @@ require 'nokogiri'
 require 'yaml'
 require 'sqlite3'
 
-SRC = File.dirname(__FILE__)
+require_relative './4chan_api'
+require_relative './4chan_boards'
+require_relative './commands/framework/command_registry'
 
-require_relative "#{SRC}/4chan_api"
-require_relative "#{SRC}/4chan_boards"
-require_relative "#{SRC}/commands/framework/command_registry"
-
-CONFIG = YAML.load_file("#{SRC}/../config/config.yml")
+CONFIG = YAML.load_file("./../config/config.yml")
 
 # Main Bot module
 #
@@ -21,7 +19,7 @@ module Bot
                                              :client_id => CONFIG[:client_id],
                                              :prefix    => CONFIG[:prefix]
 
-  @db = SQLite3::Database.new "#{SRC}/../config/bot.db"
+  @db = SQLite3::Database.new "./../config/bot.db"
   @db.execute <<-SQL
   create table if not exists channels (
     server_id int,
