@@ -1,6 +1,6 @@
 SCREEN_NAME=4discord
 
-screen -XS 4discord quit
+screen -XS $SCREEN_NAME quit
 
 git reset --hard
 git clean -fd
