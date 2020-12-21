@@ -8,5 +8,5 @@ task :update do
 end
 
 task :mount do
-  system("screen -dmS 4discord bash -c 'cd ./src/ && ruby 4discord.rb'")
+  system("screen -dmS 4discord bash -c 'ruby src/4discord.rb'")
 end
