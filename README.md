@@ -7,7 +7,7 @@ Discord bot which fetches random posts from any [4chan.org](https://4chan.org/) 
 
   1. Invite **4discord** to your Discord server using [this invite link](https://discord.com/api/oauth2/authorize?client_id=780529113118539798&permissions=60416&scope=bot)!
   2. Use the `/4channel <channel>` command to hook the bot to an existing text channel on your server. (i.e: `/4channel example_channel`).
-        * Using /4channel requires administrative permissions on the server.
+        * Using /4channel requires you to have administrative permissions on the server.
   3. All set! Now you should be able to use the rest of the bot's commands on the channel you have hooked it to.
 
 ### Commands
