@@ -1,8 +1,4 @@
-task :default => [:clean, :update, :mount]
-
-task :clean do
-  system("screen -ls | grep Detached | cut -d. -f1 | awk '{print $1}' | xargs kill")
-end
+task :default => [:update, :mount]
 
 task :update do
   system("git reset --hard")
