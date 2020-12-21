@@ -1,16 +1,16 @@
 task :default => [:clean, :update, :mount]
 
 task :clean do
-  sh "screen -ls | grep Detached | cut -d. -f1 | awk '{print $1}' | xargs kill"
+  system("screen -ls | grep Detached | cut -d. -f1 | awk '{print $1}' | xargs kill")
 end
 
 task :update do
-  sh "git reset --hard"
-  sh "git clean -fd"
-  sh "git pull"
-  sh "bundle install"
+  system("git reset --hard")
+  system("git clean -fd")
+  system("git pull")
+  system("bundle install")
 end
 
 task :mount do
-  sh "screen -dmS 4discord bash -c 'cd ./src/ && ruby 4discord.rb'"
+  system("screen -dmS 4discord bash -c 'cd ./src/ && ruby 4discord.rb'")
 end
