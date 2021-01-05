@@ -1,6 +1,8 @@
 # Node bot command
 
 class ChanCommand
+  require 'nokogiri'
+
   DEFAULT_BOARD      = "b"
   POST_EMBED_COLOUR  = "#9b1f1f"
   REPLY_EMBED_COLOUR = "#dd2929"

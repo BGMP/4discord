@@ -1,5 +1,4 @@
 require 'discordrb'
-require 'nokogiri'
 require 'yaml'
 require 'sqlite3'
 
