@@ -16,7 +16,7 @@ class BotInfoCommand
 
     bot.command(LABEL.to_sym,
                 :descritpion         => "Display general information and metrics for the bot.",
-                :usage               => "/4metrics",
+                :usage               => "/4info",
                 :min_args            => 0,
                 :max_args            => 0,
                 :rescue              => "An internal exception has occurred."
