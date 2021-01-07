@@ -1,7 +1,9 @@
-4discord
----
+<p align="center">
+  <img height="200" width="200" src="https://github.com/BGMP/4discord/blob/master/assets/logo.png" />
+</p>
 
-Discord bot which fetches random posts from any [4chan.org](https://4chan.org/) board!
+<h1 align="center">4discord</h1>
+<h4 align="center">Discord bot which fetches random posts from any <a href="https://4chan.org/" target="_blank">4chan.org</a> board!</h4>
 
 ### Set up
 
