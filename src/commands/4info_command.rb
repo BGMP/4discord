@@ -23,7 +23,7 @@ class BotInfoCommand
 
       sender_id = event.user.id
       unless STAFF.include?(sender_id)
-        return "You do not have permission."
+        return
       end
 
       rows = db.execute("SELECT * FROM channels")
