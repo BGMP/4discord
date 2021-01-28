@@ -1,7 +1,6 @@
 # Command for general bot information and metrics
 
 class BotInfoCommand
-  LABEL = "4info"
   EMBED_COLOUR = "#9b1f1f"
 
   # Members of the 4discord staff team allowed to perform info requests.
@@ -14,7 +13,7 @@ class BotInfoCommand
 
   def register(bot, db)
 
-    bot.command(LABEL.to_sym,
+    bot.command(:"4info",
                 :descritpion         => "Display general information and metrics for the bot.",
                 :usage               => "/4info",
                 :min_args            => 0,

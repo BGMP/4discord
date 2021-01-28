@@ -2,12 +2,11 @@
 #
 
 class HelpCommand
-  LABEL = "4help"
   EMBED_COLOUR = "#9b1f1f"
 
   def register(bot, db)
 
-    bot.command(LABEL.to_sym,
+    bot.command(:"4help",
                 :descritpion            => "Displays general help for the bot",
                 :usage                  => "/4help",
                 :min_args               => 0,
