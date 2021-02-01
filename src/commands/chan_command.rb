@@ -2,15 +2,18 @@
 
 class ChanCommand
   require 'nokogiri'
+  require 'time-hash'
 
   DEFAULT_BOARD      = "b"
   POST_EMBED_COLOUR  = "#9b1f1f"
   REPLY_EMBED_COLOUR = "#dd2929"
+  EXPIRE_LATEST_PULL = 120               # 120 seconds
+  EXPIRE_LATEST_BOARD = 120              # 120 seconds
 
   def register(bot, db)
 
-    @latest_pulls = Hash.new         # Latest posts randomly pulled by /chan. { :channel_id => post } map
-    @latest_board = Hash.new         # Latest board /chan pulled a post from. { :channel_id => board } map
+    @latest_pulls = TimeHash.new         # Latest posts randomly pulled by /chan. { :channel_id => post } map
+    @latest_board = TimeHash.new         # Latest boards /chan pulled a post from. { :channel_id => board } map
 
     bot.command(:chan,
                 :descritpion         => "Main command for fetching random 4chan posts and replies",
@@ -84,8 +87,8 @@ class ChanCommand
 
       post = ChanAPI.get_post(board, page, thread_number)
 
-      @latest_pulls[channel_id] = post
-      @latest_board[channel_id] = board
+      @latest_pulls.put(channel_id, post, EXPIRE_LATEST_PULL)
+      @latest_board.put(channel_id, board, EXPIRE_LATEST_BOARD)
 
       file_url = ChanAPI.get_media_url(board.to_s, post["tim"], post["ext"])
 
