@@ -47,7 +47,7 @@ class ChanCommand
         board = DEFAULT_BOARD
       elsif board.eql?("replies")
         if latest.nil?
-          return "You must pull a random post first! Use /chan"
+          return "You must pull a post first! Use /chan"
         else
 
           replies = latest["last_replies"]
