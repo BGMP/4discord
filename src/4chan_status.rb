@@ -21,7 +21,7 @@ module ChanStatus
           puts("[INFO : 4chan_api @ #{Time.now.strftime(LOG_TIMESTAMP_FORMAT)}] API endpoints returned status #{a4cdn_response.code} #{a4cdn_response.message}")
           puts("[INFO : 4chan_api @ #{Time.now.strftime(LOG_TIMESTAMP_FORMAT)}] API media returned status #{i4cdn_response.code} #{i4cdn_response.message}")
 
-          sleep(600)                                           # Check the API status every 10 minutes.
+          sleep(600)  # Check the API status every 10 minutes.
         end
       end
     end
