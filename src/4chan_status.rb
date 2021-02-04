@@ -38,7 +38,7 @@ module ChanStatus
             @i_status = i_status
           end
 
-          sleep(6)  # Check the API status every 10 minutes.
+          sleep(600)  # Check the API status every 10 minutes.
         end
       end
     end
