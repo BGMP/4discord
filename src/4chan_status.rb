@@ -29,12 +29,12 @@ module ChanStatus
           i_status = "#{i4cdn_response.code} #{i4cdn_response.message}"
 
           if @a_status != a_status
-            Discordrb::LOGGER.info("API endpoints returned status #{a_status}. Previously: #{@a_status}")
+            Discordrb::LOGGER.info("API endpoints returned status #{a_status}. Previously: #{@a_status}.")
             @a_status = a_status
           end
 
           if @i_status != i_status
-            Discordrb::LOGGER.info("API media returned status #{i_status}. Previously: #{@i_status}")
+            Discordrb::LOGGER.info("API media returned status #{i_status}. Previously: #{@i_status}.")
             @i_status = i_status
           end
 
