@@ -9,7 +9,7 @@ require_relative '4chan_api'
 module ChanStatus
 
   class << self
-    def run_active_checker
+    def run_async_checker
 
       Thread::new do
 

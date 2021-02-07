@@ -33,7 +33,7 @@ module Bot
   SQL
 
   CommandRegistry.new.register_commands(@bot, @db)
-  ChanStatus.run_active_checker
+  ChanStatus.run_async_checker
 
   at_exit do
     @bot.stop
