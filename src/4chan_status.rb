@@ -12,6 +12,7 @@ module ChanStatus
     def run_async_checker
 
       Thread::new do
+        Thread.current[:discordrb_name] = "4chan_api"
 
         @a_status = "Not checked"
         @i_status = "Not checked"
