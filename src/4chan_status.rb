@@ -9,10 +9,9 @@ require_relative '4chan_api'
 module ChanStatus
 
   class << self
-    def run_async_checker
+    def run_active_checker
 
       Thread::new do
-        Thread.current[:discordrb_name] = "4chan_api"
 
         @a_status = "Not checked"
         @i_status = "Not checked"
