@@ -38,8 +38,6 @@ Instructions on how to set the bot up internally, and on how to run it for devel
 * Complete the fields in `config.yml` with your bot's client id and token.
 * Run the [4discord.rb](https://github.com/BGMP/4discord/blob/master/src/4discord.rb) file. (`ruby 4discord.rb`)
 
-A [mounting script](https://github.com/BGMP/4discord/blob/master/mount.sh) is also included in the project, although it is not recommended for testing purposes.
-
 ### Background
 
 This bot started as a small, fun project to approach, inspired by another [4chan bot](https://github.com/Romejanic/4chan-Discord-Bot). In the end I decided to carry on and keep adding features and fixing bugs, due to the massive support I received from friends and other people who enjoy reading 4chan content!
