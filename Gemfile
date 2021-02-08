@@ -11,3 +11,11 @@ gem 'nokogiri', '~> 1.10', '>= 1.10.10'                   # HTML parsing
 gem 'open-uri', '~> 0.1.0'                                # For rest-api interactions
 gem 'sqlite3', '~> 1.4', '>= 1.4.2'                       # SQLite, as the database for the bot
 gem 'time-hash', '~> 0.1.0'                               # Hashes with expiring keys
+
+group :development do
+  gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'                    # Resolve OpenSSH problems with capistrano
+  gem 'ed25519', '>= 1.2', '< 2.0'                         # Resolve OpenSSH problems with capistrano
+  gem "capistrano", "~> 3.14", require: false              # Deployment
+  gem 'capistrano-bundler', '~> 2.0', require: false       # Capistrano bundler integration
+  gem 'rvm1-capistrano3', require: false                   # Capistrano rvm integration
+end

@@ -1,6 +1,18 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    airbrussh (1.4.0)
+      sshkit (>= 1.6.1, != 1.7.0)
+    bcrypt_pbkdf (1.1.0)
+    bcrypt_pbkdf (1.1.0-x64-mingw32)
+    capistrano (3.15.0)
+      airbrussh (>= 1.0.0)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (>= 1.9.0)
+    capistrano-bundler (2.0.1)
+      capistrano (~> 3.1)
+    concurrent-ruby (1.1.8)
     discordrb (3.4.2)
       discordrb-webhooks (~> 3.4.2)
       ffi (>= 1.9.24)
@@ -11,45 +23,74 @@ GEM
       rest-client (>= 2.0.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    ed25519 (1.2.4)
     event_emitter (0.2.6)
     ffi (1.14.2)
+    ffi (1.14.2-x64-mingw32)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    i18n (1.8.8)
+      concurrent-ruby (~> 1.0)
     json (2.5.1)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2020.1104)
+    net-scp (3.0.0)
+      net-ssh (>= 2.6.5, < 7.0.0)
+    net-ssh (6.1.0)
     netrc (0.11.0)
+    nokogiri (1.11.1-x64-mingw32)
+      racc (~> 1.4)
     nokogiri (1.11.1-x86_64-linux)
       racc (~> 1.4)
     open-uri (0.1.0)
     opus-ruby (1.0.1)
       ffi
     racc (1.5.2)
+    rake (13.0.3)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rest-client (2.1.0-x64-mingw32)
+      ffi (~> 1.9)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
+    rvm1-capistrano3 (1.4.0)
+      capistrano (~> 3.0)
+      sshkit (>= 1.2)
     sqlite3 (1.4.2)
+    sshkit (1.21.2)
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
     time-hash (0.1.0)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7)
+    unf_ext (0.0.7.7-x64-mingw32)
     websocket (1.2.9)
     websocket-client-simple (0.3.0)
       event_emitter
       websocket
 
 PLATFORMS
+  x64-mingw32
   x86_64-linux
 
 DEPENDENCIES
+  bcrypt_pbkdf (>= 1.0, < 2.0)
+  capistrano (~> 3.14)
+  capistrano-bundler (~> 2.0)
   discordrb (~> 3.3)
+  ed25519 (>= 1.2, < 2.0)
   json (~> 2.3, >= 2.3.1)
   nokogiri (~> 1.10, >= 1.10.10)
   open-uri (~> 0.1.0)
+  rvm1-capistrano3
   sqlite3 (~> 1.4, >= 1.4.2)
   time-hash (~> 0.1.0)
 
@@ -57,4 +98,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   2.2.8
+   2.1.4
