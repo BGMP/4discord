@@ -8,7 +8,6 @@ ruby '2.6.6'
 gem 'discordrb', github: 'shardlab/discordrb', tag: 'v3.4.2'  # Discord API for Ruby
 gem 'json', '~> 2.3', '>= 2.3.1'                              # Ensure JSON support for 4chan's API interaction
 gem 'nokogiri', '~> 1.10', '>= 1.10.10'                       # HTML parsing
-gem 'open-uri', '~> 0.1.0'                                    # For rest-api interactions
 gem 'sqlite3', '~> 1.4', '>= 1.4.2'                           # SQLite, as the database for the bot
 gem 'time-hash', '~> 0.1.0'                                   # Hashes with expiring keys
 

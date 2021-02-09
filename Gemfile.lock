@@ -50,7 +50,6 @@ GEM
       racc (~> 1.4)
     nokogiri (1.11.1-x86_64-linux)
       racc (~> 1.4)
-    open-uri (0.1.0)
     opus-ruby (1.0.1)
       ffi
     racc (1.5.2)
@@ -95,7 +94,6 @@ DEPENDENCIES
   ed25519 (>= 1.2, < 2.0)
   json (~> 2.3, >= 2.3.1)
   nokogiri (~> 1.10, >= 1.10.10)
-  open-uri (~> 0.1.0)
   rvm1-capistrano3
   sqlite3 (~> 1.4, >= 1.4.2)
   time-hash (~> 0.1.0)
