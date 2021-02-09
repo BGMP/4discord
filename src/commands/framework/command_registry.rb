@@ -13,6 +13,6 @@ class CommandRegistry
     ChansCommand.new.register(bot, db)
     HelpCommand.new.register(bot, db)
     ChannelCommand.new.register(bot, db)
-    BotInfoCommand.new.register(bot, db)
+    BotInfoCommand.new.register(bot)
   end
 end

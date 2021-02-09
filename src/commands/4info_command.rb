@@ -11,7 +11,7 @@ class BotInfoCommand
       308254655148720131  # AbdulAkbar
   ]
 
-  def register(bot, db)
+  def register(bot)
 
     bot.command(:"4info",
                 :descritpion         => "Display general information and metrics for the bot.",
@@ -26,14 +26,13 @@ class BotInfoCommand
         return
       end
 
-      rows = db.execute("SELECT * FROM channels")
-      registered_servers_count = rows.size
+      servers_added_to = bot.servers.size
 
       bot.channel(event.channel.id).send_embed do |embed|
         embed.title = "Information Report"
         embed.colour = EMBED_COLOUR
         embed.add_field(:name => "Used in",
-                        :value => "#{registered_servers_count} #{registered_servers_count == 1 ? "server" : "servers"}",
+                        :value => "#{servers_added_to} #{servers_added_to == 1 ? "server" : "servers"}",
                         :inline => true
         )
         embed.add_field(:name => "Version",
