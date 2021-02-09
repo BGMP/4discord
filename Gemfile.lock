@@ -1,3 +1,17 @@
+GIT
+  remote: https://github.com/shardlab/discordrb.git
+  revision: 57599e838fc1583e709088f3f06c9f7fdfb99cc9
+  tag: v3.4.2
+  specs:
+    discordrb (3.4.2)
+      discordrb-webhooks (~> 3.4.2)
+      ffi (>= 1.9.24)
+      opus-ruby
+      rest-client (>= 2.0.0)
+      websocket-client-simple (>= 0.3.0)
+    discordrb-webhooks (3.4.2)
+      rest-client (>= 2.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -13,14 +27,6 @@ GEM
     capistrano-bundler (2.0.1)
       capistrano (~> 3.1)
     concurrent-ruby (1.1.8)
-    discordrb (3.4.2)
-      discordrb-webhooks (~> 3.4.2)
-      ffi (>= 1.9.24)
-      opus-ruby
-      rest-client (>= 2.0.0)
-      websocket-client-simple (>= 0.3.0)
-    discordrb-webhooks (3.4.2)
-      rest-client (>= 2.0.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     ed25519 (1.2.4)
@@ -85,7 +91,7 @@ DEPENDENCIES
   bcrypt_pbkdf (>= 1.0, < 2.0)
   capistrano (~> 3.14)
   capistrano-bundler (~> 2.0)
-  discordrb (~> 3.3)
+  discordrb!
   ed25519 (>= 1.2, < 2.0)
   json (~> 2.3, >= 2.3.1)
   nokogiri (~> 1.10, >= 1.10.10)
