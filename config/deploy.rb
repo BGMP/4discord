@@ -5,7 +5,7 @@ require 'rvm1/capistrano3'
 
 set :application, "4discord"
 set :repo_url, "git@github.com:BGMP/4discord.git"
-set :branch, "master"
+set :branch, "production"
 set :user, "deploy"
 set :stages, %w(production)
 set :deploy_to, "/home/deploy/4discord"
