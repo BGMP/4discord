@@ -3,7 +3,14 @@
 </p>
 
 <h1 align="center">4discord</h1>
+
 <h4 align="center">Discord bot which fetches random posts from any <a href="https://4chan.org/" target="_blank">4chan.org</a> board!</h4>
+
+<p align="center">
+  <a href="https://gitlicense.com/license/BGMP/4discord">
+    <img src="https://gitlicense.com/badge/BGMP/4discord" alt=""/>
+  </a>
+</p>
 
 ### Set up
 

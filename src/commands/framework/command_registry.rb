@@ -8,8 +8,8 @@ class CommandRegistry
   require_relative '../4channel_command'
   require_relative '../4info_command'
 
-  def register_commands(bot, db)
-    ChanCommand.new.register(bot, db)
+  def register_commands(bot, db, config)
+    ChanCommand.new.register(bot, db, config)
     ChansCommand.new.register(bot, db)
     HelpCommand.new.register(bot, db)
     ChannelCommand.new.register(bot, db)
