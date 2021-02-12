@@ -136,7 +136,7 @@ class ChanCommand
           f.puts "#{event.user.name}##{event.user.tag} from #{event.server.name}"
         end
 
-        return ":tada: Congrats, anon! You have won one of the 4discord Nitro giveaway codes! :tada:\n\n" \
+        return ":tada: Congrats, anon <@#{event.user.id}>! You have won one of the 4discord Nitro giveaway codes! :tada:\n\n" \
         "Consider joining the bot's support server to help me continue on improving this project!\n" \
         "\n" \
         "Thank you for using 4discord! :champagne_glass:\n" \
