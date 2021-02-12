@@ -9,8 +9,9 @@ class ChanCommand
   REPLY_EMBED_COLOUR = "#dd2929"
   EXPIRE_LATEST_PULL = 120               # 120 seconds
   EXPIRE_LATEST_BOARD = 120              # 120 seconds
+  WINNERS_FILE_PATH = "../config/winners.txt"
 
-  def register(bot, db)
+  def register(bot, db, config)
 
     @latest_pulls = TimeHash.new         # Latest posts randomly pulled by /chan. { :channel_id => post } map
     @latest_board = TimeHash.new         # Latest boards /chan pulled a post from. { :channel_id => board } map
@@ -110,6 +111,43 @@ class ChanCommand
       if !post["ext"].nil? and post["ext"].eql? ".webm"
         "#{file_url}"
       end
+
+      if success(config[:gift_chance_percent]) and not config[:gift_codes].empty?
+        codes = config[:gift_codes]
+        code = codes.first
+        config[:gift_codes] = codes.drop(1)
+
+        File.open("../config/config.yml", "w") do |f|
+          f.write config.to_yaml
+        end
+
+        txt = nil
+        if File.file?(WINNERS_FILE_PATH)
+          File.open(WINNERS_FILE_PATH, "r") do |f|
+            txt = f.read
+          end
+        end
+
+        File.open(WINNERS_FILE_PATH, "w") do |f|
+          unless txt.nil?
+            f.puts(txt)
+          end
+
+          f.puts "#{event.user.name}##{event.user.tag} from #{event.server.name}"
+        end
+
+        return ":tada: Congrats, anon! You have won one of the 4discord Nitro giveaway codes! :tada:\n\n" \
+        "Consider joining the bot's support server to help me continue on improving this project!\n" \
+        "\n" \
+        "Thank you for using 4discord! :champagne_glass:\n" \
+        "\n" \
+        "https://discord.com/invite/mYsn4K5ht9\n" \
+        "#{code}"
+      end
+    end
+
+    def success(percent)
+      rand <= percent / 100.0
     end
   end
 end

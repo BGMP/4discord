@@ -32,7 +32,7 @@ module Bot
   );
   SQL
 
-  CommandRegistry.new.register_commands(@bot, @db)
+  CommandRegistry.new.register_commands(@bot, @db, CONFIG)
   ChanStatus.run_async_checker
 
   at_exit do
