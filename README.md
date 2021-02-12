@@ -2,12 +2,19 @@
   <img height="200" width="200" src="https://github.com/BGMP/4discord/blob/master/assets/logo.png" />
 </p>
 
-<h1 align="center">4discord
+<h1 align="center">4discord</h1>
+
+<p align="center">
+  <img height="200" width="200" src="https://github.com/BGMP/4discord/blob/master/assets/logo.png" />
+</p>
+
+<h4 align="center">Discord bot which fetches random posts from any <a href="https://4chan.org/" target="_blank">4chan.org</a> board!</h4>
+
+<p align="center">
   <a href="https://gitlicense.com/license/BGMP/4discord">
     <img src="https://gitlicense.com/badge/BGMP/4discord" alt=""/>
   </a>
-</h1>
-<h4 align="center">Discord bot which fetches random posts from any <a href="https://4chan.org/" target="_blank">4chan.org</a> board!</h4>
+</p>
 
 ### Set up
 
