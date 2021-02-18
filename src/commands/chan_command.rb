@@ -109,10 +109,6 @@ class ChanCommand
         )
       end
 
-      if !post["ext"].nil? and post["ext"].eql? ".webm"
-        "#{file_url}"
-      end
-
       if success(config[:gift_chance_percent]) and not config[:gift_codes].empty?
         codes = config[:gift_codes]
         code = codes.first
@@ -144,6 +140,10 @@ class ChanCommand
         "\n" \
         "https://discord.com/invite/mYsn4K5ht9\n" \
         "#{code}"
+      else
+        if !post["ext"].nil? and post["ext"].eql? ".webm"
+          "#{file_url}"
+        end
       end
     end
 
