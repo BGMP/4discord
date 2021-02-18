@@ -11,7 +11,7 @@ class ChansCommand
       3 => 24.. 35,
       4 => 36.. 47,
       5 => 48.. 59,
-      6 => 60.. 73
+      6 => 60.. 75
   }
 
   def register(bot, db)

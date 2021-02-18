@@ -74,7 +74,9 @@ BOARDS = {
     :hr     =>    "highresolution",
     :gif    =>    "adultgif",
     :aco    =>    "adultcartoons",
-    :r      =>    "adultrequests"
+    :r      =>    "adultrequests",
+    :pw     =>    "prowritting",
+    :vt     =>    "vtubers"
 }.freeze
 
 module ChanBoards
