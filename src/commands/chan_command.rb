@@ -92,11 +92,12 @@ class ChanCommand
       @latest_board.put(channel_id, board, EXPIRE_LATEST_BOARD)
 
       file_url = ChanAPI.get_media_url(board.to_s, post["tim"], post["ext"])
+      comment = post["com"].nil? ? "" : post["com"].gsub("<br>", "\n")
 
       bot.channel(channel_id).send_embed do |embed|
         embed.title = "#{post["name"]} No. #{post["no"]}"
         embed.colour = POST_EMBED_COLOUR
-        embed.description = Nokogiri::HTML(post["com"].gsub("<br>", "\n")).text
+        embed.description = Nokogiri::HTML(comment).text
         embed.add_field(:name => "Link",
                         :value => ChanAPI.get_thread_url(board, post["no"])
         )
