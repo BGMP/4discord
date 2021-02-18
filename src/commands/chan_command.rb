@@ -96,7 +96,7 @@ class ChanCommand
       bot.channel(channel_id).send_embed do |embed|
         embed.title = "#{post["name"]} No. #{post["no"]}"
         embed.colour = POST_EMBED_COLOUR
-        embed.description = Nokogiri::HTML(post["com"]).text
+        embed.description = Nokogiri::HTML(post["com"].gsub("<br>", "\n")).text
         embed.add_field(:name => "Link",
                         :value => ChanAPI.get_thread_url(board, post["no"])
         )

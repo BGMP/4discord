@@ -1,4 +1,4 @@
-# A command to display general help for the bot
+# A command to hook 4discord to a given text channel
 #
 
 class ChannelCommand
