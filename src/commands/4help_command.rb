@@ -35,7 +35,7 @@ class HelpCommand
                           :inline => true
           )
           embed.add_field(:name => "/chan replies",
-                          :value => "Pulls some replies to the latest randomly pulled post within a 2 minutes window.",
+                          :value => "Pulls some replies to the latest randomly pulled post within a 15 minutes window.",
                           :inline => true
           )
           embed.add_field(:name => "/chans <page>",

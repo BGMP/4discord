@@ -27,7 +27,7 @@ Every command for the 4discord bot
   * `/4help`: Display general help for the bot.
   * `/chans <page>`: Display available 4chan boards.
   * `/chan <board>`: Pull a random post from a 4chan board. Not providing a board will randomly pull from /b/!
-  * `/chan replies`: Pulls some replies to the latest randomly pulled post within a 2 minutes window.
+  * `/chan replies`: Pulls some replies to the latest randomly pulled post within a 15 minutes window.
 
 ### Running
 

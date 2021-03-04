@@ -7,8 +7,8 @@ class ChanCommand
   DEFAULT_BOARD      = "b"
   POST_EMBED_COLOUR  = "#9b1f1f"
   REPLY_EMBED_COLOUR = "#dd2929"
-  EXPIRE_LATEST_PULL = 120               # 120 seconds
-  EXPIRE_LATEST_BOARD = 120              # 120 seconds
+  EXPIRE_LATEST_PULL = 900               # 15 minutes
+  EXPIRE_LATEST_BOARD = 900              # 15 minutes
   WINNERS_FILE_PATH = "../config/winners.txt"
 
   def register(bot, db, config)
@@ -48,7 +48,7 @@ class ChanCommand
         board = DEFAULT_BOARD
       elsif board.eql?("replies")
         if latest.nil?
-          return "You must pull a post first! Use /chan"
+          return "You either haven't pulled a post using /chan yet, or replies cannot be fetched at this time (only available for 15 minutes after pulling)."
         else
 
           replies = latest["last_replies"]
