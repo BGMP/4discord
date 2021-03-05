@@ -7,6 +7,8 @@
 <h4 align="center">Discord bot which fetches random posts from any <a href="https://4chan.org/" target="_blank">4chan.org</a> board!</h4>
 
 <p align="center">
+  <a href="https://github.com/BGMP/4discord/actions/workflows/deploy.yml" class="rich-diff-level-one"><img src="https://github.com/BGMP/4discord/actions/workflows/deploy.yml/badge.svg?branch=production" alt="deploy" style="max-width:100%;">
+  </a>
   <a href="https://gitlicense.com/license/BGMP/4discord">
     <img src="https://gitlicense.com/badge/BGMP/4discord" alt=""/>
   </a>
