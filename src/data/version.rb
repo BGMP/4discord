@@ -1,6 +1,6 @@
 # Temporary module to keep track of general bot information.
 
 module BotVersion
-  VERSION = "0.3-SNAPSHOT"
+  VERSION = "1.0"
   ENV = "production"
 end
