@@ -18,7 +18,7 @@ class ChansCommand
 
   def register(bot, db)
     bot.command(:chans,
-                :descritpion => 'Displays some of the most popular 4chan boards',
+                :description => 'Displays some of the most popular 4chan boards',
                 :usage => '/chans',
                 :min_args => 0,
                 :max_args => 1,

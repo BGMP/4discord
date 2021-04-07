@@ -18,7 +18,7 @@ class ChanCommand
     @latest_board = TimeHash.new         # Latest boards /chan pulled a post from. { :channel_id => board } map
 
     bot.command(:chan,
-                :descritpion => 'Main command for fetching random 4chan posts and replies',
+                :description => 'Main command for fetching random 4chan posts and replies',
                 :usage => '/chan <board | replies>',
                 :min_args => 0,
                 :max_args => 1,

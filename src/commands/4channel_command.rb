@@ -6,7 +6,7 @@
 class ChannelCommand
   def register(bot, db)
     bot.command(:"4channel",
-                :descritpion => 'Hooks 4discord to the specified channel',
+                :description => 'Hooks 4discord to the specified channel',
                 :usage => '/4channel <channel> to hook 4discord to a text channel!',
                 :required_permissions => [:administrator],
                 :permission_message => false,

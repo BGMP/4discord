@@ -8,7 +8,7 @@ class HelpCommand
 
   def register(bot, db)
     bot.command(:"4help",
-                :descritpion => 'Displays general help for the bot',
+                :description => 'Displays general help for the bot',
                 :usage => '/4help',
                 :min_args => 0,
                 :max_args => 0,

@@ -7,7 +7,7 @@ class BotInfoCommand
 
   def register(bot)
     bot.command(:"4info",
-                :descritpion => 'Display general information and metrics for the bot.',
+                :description => 'Display general information and metrics for the bot.',
                 :usage => '/4info',
                 :min_args => 0,
                 :max_args => 0,
