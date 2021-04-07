@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # A class to continuously check on 4chan's API status, and log changes to its responses
 #
 
@@ -7,21 +9,19 @@ require 'net/http'
 require_relative '4chan_api'
 
 module ChanStatus
-
   class << self
     def run_async_checker
+      Thread.new do
+        Thread.current[:discordrb_name] = '4chan_api'
 
-      Thread::new do
-        Thread.current[:discordrb_name] = "4chan_api"
+        @a_status = 'Not checked'
+        @i_status = 'Not checked'
 
-        @a_status = "Not checked"
-        @i_status = "Not checked"
+        loop do
+          post = ChanAPI.get_post('b', 0, 0) # Pull a random post to later test against media
 
-        while true
-          post = ChanAPI.get_post("b", 0, 0)  # Pull a random post to later test against media
-
-          a4cdn_uri = URI("https://a.4cdn.org/boards.json")
-          i4cdn_uri = URI(ChanAPI.get_media_url("b", post["tim"], post["ext"]))
+          a4cdn_uri = URI('https://a.4cdn.org/boards.json')
+          i4cdn_uri = URI(ChanAPI.get_media_url('b', post['tim'], post['ext']))
 
           a4cdn_response = Net::HTTP.get_response(a4cdn_uri)
           i4cdn_response = Net::HTTP.get_response(i4cdn_uri)

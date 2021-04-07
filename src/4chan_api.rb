@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 # A module to easily interact with 4chan's API
 #
 
-API = "https://a.4cdn.org/{0}/catalog.json".freeze
-API_MEDIA = "https://i.4cdn.org/{0}/{1}{2}".freeze
-API_THREAD = "https://boards.4chan.org/{0}/thread/{1}".freeze
+API = 'https://a.4cdn.org/{0}/catalog.json'
+API_MEDIA = 'https://i.4cdn.org/{0}/{1}{2}'
+API_THREAD = 'https://boards.4chan.org/{0}/thread/{1}'
 
 module ChanAPI
   require 'json'
@@ -13,8 +15,7 @@ module ChanAPI
   class Error < RuntimeError; end
 
   class << self
-    attr_accessor :logger
-    attr_accessor :timeout
+    attr_accessor :logger, :timeout
 
     def log(msg)
       logger&.debug(msg)
@@ -35,22 +36,22 @@ module ChanAPI
 
     # Gets all the pages for the specified board
     def get_pages(board)
-      api_get(API.gsub("{0}", board.to_s)) do |io|
+      api_get(API.gsub('{0}', board.to_s)) do |io|
         JSON.parse(io.read)
       end
     end
 
     # Gets all 10 threads within the specified page
     def get_page_posts(board, page)
-      api_get(API.gsub("{0}", board.to_s)) do |io|
-        JSON.parse(io.read)[page]["threads"]
+      api_get(API.gsub('{0}', board.to_s)) do |io|
+        JSON.parse(io.read)[page]['threads']
       end
     end
 
     # Gets the specified thread (0-9), from the specified page
     def get_post(board, page, thread_number)
-      api_get(API.gsub("{0}", board.to_s)) do |io|
-        JSON.parse(io.read)[page]["threads"][thread_number]
+      api_get(API.gsub('{0}', board.to_s)) do |io|
+        JSON.parse(io.read)[page]['threads'][thread_number]
       end
     end
 
@@ -63,9 +64,9 @@ module ChanAPI
     # @return The link to the media piece
     def get_media_url(board, tim, ext)
       API_MEDIA
-          .gsub("{0}", board.to_s)
-          .gsub("{1}", tim.to_s)
-          .gsub("{2}", ext.to_s)
+        .gsub('{0}', board.to_s)
+        .gsub('{1}', tim.to_s)
+        .gsub('{2}', ext.to_s)
     end
 
     # Gets the link to a 4chan thread
@@ -76,8 +77,8 @@ module ChanAPI
     # @return The link to the thread
     def get_thread_url(board, no)
       API_THREAD
-          .gsub("{0}", board.to_s)
-          .gsub("{1}", no.to_s)
+        .gsub('{0}', board.to_s)
+        .gsub('{1}', no.to_s)
     end
   end
 end

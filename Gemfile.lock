@@ -17,9 +17,10 @@ GEM
   specs:
     airbrussh (1.4.0)
       sshkit (>= 1.6.1, != 1.7.0)
+    ast (2.4.2)
     bcrypt_pbkdf (1.1.0)
     bcrypt_pbkdf (1.1.0-x64-mingw32)
-    capistrano (3.15.0)
+    capistrano (3.16.0)
       airbrussh (>= 1.0.0)
       i18n
       rake (>= 10.0.0)
@@ -31,29 +32,34 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     ed25519 (1.2.4)
     event_emitter (0.2.6)
-    ffi (1.14.2)
-    ffi (1.14.2-x64-mingw32)
+    ffi (1.15.0)
+    ffi (1.15.0-x64-mingw32)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    i18n (1.8.8)
+    i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     json (2.5.1)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2020.1104)
+    mime-types-data (3.2021.0225)
     net-scp (3.0.0)
       net-ssh (>= 2.6.5, < 7.0.0)
     net-ssh (6.1.0)
     netrc (0.11.0)
-    nokogiri (1.11.1-x64-mingw32)
+    nokogiri (1.11.2-x64-mingw32)
       racc (~> 1.4)
-    nokogiri (1.11.1-x86_64-linux)
+    nokogiri (1.11.2-x86_64-linux)
       racc (~> 1.4)
     opus-ruby (1.0.1)
       ffi
+    parallel (1.20.1)
+    parser (3.0.1.0)
+      ast (~> 2.4.1)
     racc (1.5.2)
+    rainbow (3.0.0)
     rake (13.0.3)
+    regexp_parser (2.1.1)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -65,6 +71,19 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rexml (3.2.5)
+    rubocop (1.12.1)
+      parallel (~> 1.10)
+      parser (>= 3.0.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml
+      rubocop-ast (>= 1.2.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.4.1)
+      parser (>= 2.7.1.5)
+    ruby-progressbar (1.11.0)
     rvm1-capistrano3 (1.4.0)
       capistrano (~> 3.0)
       sshkit (>= 1.2)
@@ -77,6 +96,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.7)
     unf_ext (0.0.7.7-x64-mingw32)
+    unicode-display_width (2.0.0)
     websocket (1.2.9)
     websocket-client-simple (0.3.0)
       event_emitter
@@ -94,6 +114,7 @@ DEPENDENCIES
   ed25519 (>= 1.2, < 2.0)
   json (~> 2.3, >= 2.3.1)
   nokogiri (~> 1.10, >= 1.10.10)
+  rubocop
   rvm1-capistrano3
   sqlite3 (~> 1.4, >= 1.4.2)
   time-hash (~> 0.1.0)
@@ -102,4 +123,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   2.1.4
+   2.2.15

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'discordrb'
 require 'yaml'
 require 'sqlite3'
@@ -9,7 +11,7 @@ require_relative '4chan_status'
 require_relative 'data/version'
 require_relative 'commands/framework/command_registry'
 
-CONFIG = YAML.load_file("../config/config.yml")
+CONFIG = YAML.load_file('../config/config.yml')
 
 # Main Bot module
 #
@@ -19,11 +21,11 @@ module Bot
   include ChanStatus
   include BotVersion
 
-  @bot = Discordrb::Commands::CommandBot.new :token     => CONFIG[:token],
+  @bot = Discordrb::Commands::CommandBot.new :token => CONFIG[:token],
                                              :client_id => CONFIG[:client_id],
-                                             :prefix    => CONFIG[:prefix]
+                                             :prefix => CONFIG[:prefix]
 
-  @db = SQLite3::Database.new "../config/bot.db"
+  @db = SQLite3::Database.new '../config/bot.db'
   @db.execute <<-SQL
   create table if not exists channels (
     server_id int,

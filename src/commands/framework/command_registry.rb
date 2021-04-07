@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # A registry class for BotCommands
 #
 
