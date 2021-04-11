@@ -12,7 +12,6 @@ class BotInfoCommand
                 :min_args => 0,
                 :max_args => 0,
                 :rescue => 'An internal exception has occurred.') do |event|
-
       servers_added_to = bot.servers.size
 
       bot.channel(event.channel.id).send_embed do |embed|
