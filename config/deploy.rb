@@ -23,7 +23,7 @@ namespace :app do
 
   task :restart do
     on roles(:app) do
-      execute :sudo, 'service 4discord restart'
+      execute :sudo, '/bin/systemctl restart 4discord.service'
     end
   end
 end
