@@ -27,7 +27,7 @@ class BotInfoCommand
                         :value => BotVersion::ENV,
                         :inline => true)
         embed.footer = Discordrb::Webhooks::EmbedFooter.new(
-          :text => 'Created by BGM#1559'
+          :text => 'Created by @oldBGM#3867'
         )
       end
     end
