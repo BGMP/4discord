@@ -59,11 +59,12 @@ class ChanCommand
           else
             replies[0..5].each do |reply|
               file_url = ChanAPI.get_media_url(@latest_board[channel_id], reply['tim'], reply['ext'])
+              comment = reply['com'].nil? ? '' : reply['com'].gsub('<br>', "\n")
 
               bot.channel(channel_id).send_embed do |embed|
                 embed.title = "#{reply['name']} No. #{reply['no']}"
                 embed.colour = REPLY_EMBED_COLOUR
-                embed.description = Nokogiri::HTML(reply['com']).text
+                embed.description = Nokogiri::HTML(comment).text
                 embed.image = Discordrb::Webhooks::EmbedImage.new(
                   :url => file_url
                 )
