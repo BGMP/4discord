@@ -79,7 +79,7 @@ class ChanCommand
       end
 
       board = ChanBoards.name_to_board_slug(board.downcase)
-      return 'Invalid board!' if board.nil?
+      return "Invalid board! Use `/chans <page>` (e.g: `/chans 3`) to explore available boards" if board.nil?
 
       page = rand(0..9)
       thread_number = page.zero? ? rand(1..10) : rand(0..9)
