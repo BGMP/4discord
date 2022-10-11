@@ -1,0 +1,15 @@
+[Unit]
+Description=4discord Bot Service
+
+[Service]
+Type=simple
+User=deploy
+Group=deploy
+WorkingDirectory=/home/deploy/4discord/current/src
+ExecStart=/bin/bash -lc "bundler exec ruby 4discord.rb"
+TimeoutSec=30
+Restart=always
+RestartSec=30s
+
+[Install]
+WantedBy=multi-user.target

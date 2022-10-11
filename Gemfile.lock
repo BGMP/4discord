@@ -1,0 +1,132 @@
+GIT
+  remote: https://github.com/shardlab/discordrb.git
+  revision: 1cd5603d23e0a329e10b46446a09f2a71cbb9f3b
+  branch: main
+  specs:
+    discordrb (3.4.2)
+      discordrb-webhooks (~> 3.4.2)
+      ffi (>= 1.9.24)
+      opus-ruby
+      rest-client (>= 2.0.0)
+      websocket-client-simple (>= 0.3.0)
+    discordrb-webhooks (3.4.2)
+      rest-client (>= 2.0.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    airbrussh (1.4.1)
+      sshkit (>= 1.6.1, != 1.7.0)
+    ast (2.4.2)
+    bcrypt_pbkdf (1.1.0)
+    bcrypt_pbkdf (1.1.0-x64-mingw32)
+    capistrano (3.17.1)
+      airbrussh (>= 1.0.0)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (>= 1.9.0)
+    capistrano-bundler (2.1.0)
+      capistrano (~> 3.1)
+    concurrent-ruby (1.1.10)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
+    ed25519 (1.3.0)
+    event_emitter (0.2.6)
+    ffi (1.15.5)
+    ffi (1.15.5-x64-mingw32)
+    http-accept (1.7.0)
+    http-cookie (1.0.5)
+      domain_name (~> 0.5)
+    i18n (1.12.0)
+      concurrent-ruby (~> 1.0)
+    json (2.6.2)
+    mime-types (3.4.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2022.0105)
+    mini_portile2 (2.8.0)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (7.0.1)
+    netrc (0.11.0)
+    nokogiri (1.13.8)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
+    nokogiri (1.13.8-x64-mingw32)
+      racc (~> 1.4)
+    nokogiri (1.13.8-x86_64-linux)
+      racc (~> 1.4)
+    opus-ruby (1.0.1)
+      ffi
+    parallel (1.22.1)
+    parser (3.1.2.1)
+      ast (~> 2.4.1)
+    racc (1.6.0)
+    rainbow (3.1.1)
+    rake (13.0.6)
+    regexp_parser (2.5.0)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
+    rest-client (2.1.0-x64-mingw32)
+      ffi (~> 1.9)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
+    rexml (3.2.5)
+    rubocop (1.34.0)
+      json (~> 2.3)
+      parallel (~> 1.10)
+      parser (>= 3.1.2.1)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.20.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.21.0)
+      parser (>= 3.1.1.0)
+    ruby-progressbar (1.11.0)
+    rvm1-capistrano3 (1.4.0)
+      capistrano (~> 3.0)
+      sshkit (>= 1.2)
+    sqlite3 (1.4.4)
+    sshkit (1.21.2)
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
+    time-hash (0.1.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.8.2)
+    unf_ext (0.0.8.2-x64-mingw32)
+    unicode-display_width (2.2.0)
+    websocket (1.2.9)
+    websocket-client-simple (0.6.0)
+      event_emitter
+      websocket
+
+PLATFORMS
+  ruby
+  x64-mingw32
+  x86_64-linux
+
+DEPENDENCIES
+  bcrypt_pbkdf (>= 1.0, < 2.0)
+  capistrano (~> 3.14)
+  capistrano-bundler (~> 2.0)
+  discordrb!
+  ed25519 (>= 1.2, < 2.0)
+  json (~> 2.3, >= 2.3.1)
+  nokogiri (~> 1.10, >= 1.10.10)
+  rubocop
+  rvm1-capistrano3
+  sqlite3 (~> 1.4, >= 1.4.2)
+  time-hash (~> 0.1.0)
+
+RUBY VERSION
+   ruby 2.7.3p183
+
+BUNDLED WITH
+   2.2.21
