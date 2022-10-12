@@ -17,9 +17,6 @@ module Bot
             embed.add_field(:name => '/chans [page]',
                             :value => 'Helps you discover all 4chan boards!',
                             :inline => true)
-            embed.add_field(:name => '/4channel',
-                            :value => 'Hook 4discord to a text channel.',
-                            :inline => true)
           end
         end
       end
