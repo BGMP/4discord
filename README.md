@@ -18,6 +18,7 @@ The bot uses slash commands as of its rewrite. Make sure to select the commands 
 the arguments as Discord requests them via visual queues (use the Tab key to auto-complete).
 
 The following list contains all available commands:
+
   * `/chan [board]`: Pull a random post from a 4chan board. Not providing a board will randomly pull from /o/!
   * `/chans [page]`: Display available 4chan boards.
   * `/4help`: Display general help for the bot.
