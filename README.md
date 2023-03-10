@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="200" width="200" src="https://repository-images.githubusercontent.com/549282531/dd3bd1f6-7276-4979-9b78-34255b3848e1"  alt=""/>
+  <img height="200" width="200" src="https://raw.githubusercontent.com/BGMP/4discord/master/assets/logo.png"  alt=""/>
 </p>
 
 <h1 align="center">4discord</h1>
