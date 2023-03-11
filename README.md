@@ -6,6 +6,17 @@
 
 <h4 align="center">Discord bot which fetches random posts from any <a href="https://4chan.org/" target="_blank">4chan.org</a> board!</h4>
 
+
+### What is 4chan?
+From [4chan.org](https://4chan.org)'s landing page:
+
+"4chan is a simple image-based bulletin board where anyone can post comments and share images. There are boards dedicated to a variety of topics, from Japanese animation and culture to videogames, music, and photography. Users do not need to register an account before participating in the community. Feel free to click on a board below that interests you and jump right in!
+
+Be sure to familiarize yourself with the [Rules](https://4chan.org/rules) before posting, and read the [FAQ](https://4chan.org/faq) if you wish to learn more about how to use the site."
+
+### What is 4discord/4cord?
+Formerly **4discord**, now just **4cord**. Browse 4chan from the comfort of your Discord server, pull from any of its boards and explore what the anonymous internet has to say using simple slash commands on your text channels of choice.
+
 ### Set up
   1. Invite **4discord** to your Discord server using 
 [this invite link](https://discord.com/api/oauth2/authorize?client_id=780529113118539798&permissions=60416&scope=bot)!
