@@ -19,7 +19,7 @@ Formerly **4discord**, now just **4cord**. Browse 4chan from the comfort of your
 
 ### Set up
   1. Invite **4discord** to your Discord server using 
-[this invite link](https://discord.com/api/oauth2/authorize?client_id=780529113118539798&permissions=60416&scope=bot)!
+[this invite link](https://discord.com/api/oauth2/authorize?client_id=780529113118539798&permissions=2048&scope=bot)!
   2. On your Discord server, you may configure the bot at Server Settings » Integrations.
   3. Make sure the channel where you want to use the bot at is marked as **NSFW** (Age Restricted Channel).
   4. All set! Now you should be able to use the bot on the channels you have defined.
