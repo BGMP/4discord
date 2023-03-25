@@ -18,4 +18,3 @@ config/config.yml
 
 # Capistrano
 log/capistrano.log
-deploy/
