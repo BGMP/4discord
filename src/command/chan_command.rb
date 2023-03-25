@@ -5,7 +5,7 @@ module Bot
     include Command
 
     def register
-      @bot.register_application_command(:chan, 'Main bot command') do |cmd|
+      @bot.register_application_command(:chan, 'Pull a random post from a messageboard') do |cmd|
         cmd.string('board', 'Choose a 4chan board', :required => false)
       end
 
